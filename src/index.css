@@ -7,10 +7,10 @@
 
 @layer base {
     body {
-        @apply font-[Roboto];
+        @apply font-[Montserrat];
     }
     li {
-        @apply px-4;
+        @apply px-6;
         @apply cursor-pointer
     }
 }
