@@ -6,7 +6,7 @@ import {AiOutlineMenu} from 'react-icons/ai'
 
 const Navbar = () => {
   return (
-    <div className="fixed w-full h-[90px] flex justify-around items-center md:px-4">
+    <div className="container mx-auto w-full h-[90px] flex justify-around items-center md:px-4 shadow-md">
       <div>
         {/* Logo */}
         <a href="#"><Logo/></a>
