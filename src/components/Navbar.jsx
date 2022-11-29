@@ -6,7 +6,7 @@ import {AiOutlineMenu} from 'react-icons/ai'
 
 const Navbar = () => {
   return (
-    <div className="container mx-auto w-full h-[90px] flex justify-around items-center md:px-4 shadow-md">
+    <div className="mx-auto w-full h-[90px] flex justify-around items-center md:px-4 shadow-md">
       <div>
         {/* Logo */}
         <a href="#"><Logo/></a>
@@ -29,9 +29,9 @@ const Navbar = () => {
         </ul>
 
         <div className="flex">
-          <button className="relative">
+          <button className="relative border-none">
             <CartWidget/>
-            <span className="absolute bg-orange-400 px-1 rounded-full text-xs text-white font-bold top-0 right-0 translate-x-3 -translate-y-2">
+            <span className="absolute bg-orange-400 px-1 rounded-full text-xs text-white font-bold top-0 right-0 -translate-y-1">
               3
             </span>
           </button>
