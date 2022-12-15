@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import { PRODUCTOS } from "../data/productos.js";
+import { useCart } from "../context/cartContext"
+import Loader from "../components/Loader.jsx";
+
 
 const ItemDetailContainer = () => {
   // console.log(data);
-
-  const [item, setItem] = useState({});
+  const [item, setItem] = useState({})
   const { id } = useParams();
+  
+  const { addToCart } = useCart()
+
 
   useEffect(() => {
     getItemDetail().then((res) => {
@@ -23,18 +28,25 @@ const ItemDetailContainer = () => {
     });
   };
 
+  const addHandler = () => { 
+    addToCart(id)
+  }
+
   // Si el producto no existe
   if (!item) {
     return (
-      <div className="flex items-center justify-center h-screen">
-        <div className="spinner">
-          <div className="rect1"></div>
-          <div className="rect2"></div>
-          <div className="rect3"></div>
-          <div className="rect4"></div>
-          <div className="rect5"></div>
-        </div>
-      </div>
+      <Loader/>
+      
+      // <div className="flex items-center justify-center h-screen">
+      //   <div className="spinner">
+      //     <div className="rect1"></div>
+      //     <div className="rect2"></div>
+      //     <div className="rect3"></div>
+      //     <div className="rect4"></div>
+      //     <div className="rect5"></div>
+      //   </div>
+        
+      // </div>
       
     );
   }
@@ -59,7 +71,9 @@ const ItemDetailContainer = () => {
             </h1>
             <div className="text-xl  font-medium mb-6">{item.category}</div>
             <p className="mb-8 text-red-500">{item.price}</p>
-            <button className="bg-primary py-4 px-8 text-white mb-10">
+            <button 
+              onClick={() => {addHandler}}
+              className="bg-primary py-4 px-8 text-white mb-10">
               Agregar al Carrito
             </button>
           </div>

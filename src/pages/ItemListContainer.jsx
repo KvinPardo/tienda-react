@@ -8,7 +8,7 @@ import { PRODUCTOS } from "../data/productos.js";
 const ItemListContainer = () => {
   const [productos, setProductos] = useState([]);
   const location = useLocation();
-  console.log(location);
+  // console.log(location);
   // console.log(PRODUCTOS);
   // console.log(productos);
 

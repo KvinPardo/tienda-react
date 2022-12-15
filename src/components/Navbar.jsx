@@ -24,7 +24,7 @@ const Navbar = () => {
     >
       <div className="container mx-auto flex items-center justify-between h-full relative">
         <Link to={"/"} className="z-20">
-          <LogoBordado width="50px"/>
+          <LogoBordado width="50px" />
         </Link>
 
         {/* Menú */}
@@ -32,7 +32,7 @@ const Navbar = () => {
         <ul className="hidden md:flex uppercase justify-between text-lg">
           <li className="">
             <Link
-              to={'/'}
+              to={"/"}
               smooth="true"
               duration={500}
               className="relative before:content-[''] before:absolute before:block before:w-[100%] before:h-[2px] 
@@ -141,10 +141,12 @@ const Navbar = () => {
           // onClick={() => setIsOpen(!isOpen)}
           className="cursor-pointer flex relative"
         >
-          <BsBag className="text-2xl" />
-          <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
-            {/* {itemAmount} */}4
-          </div>
+          <Link to='/carrito'>
+            <BsBag className="text-2xl" />
+            <div className="bg-red-500 absolute -right-2 -bottom-2 text-[12px] w-[18px] h-[18px] text-white rounded-full flex justify-center items-center">
+              {/* {itemAmount} */}4
+            </div>
+          </Link>
         </div>
       </div>
     </header>
