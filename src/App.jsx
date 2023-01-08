@@ -1,35 +1,44 @@
-import React, { useState } from "react";
-import Navbar from "./components/Navbar";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Footer from "./components/Footer";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Home from "./pages/Home";
+// import ProductDetails from "./pages/ItemDetailContainer";
+
+// components
+// import Sidebar from "./components/CartWidget";
+import Navbar from "./components/Navbar";
+import Footer from "./components/Footer";
 import ItemListContainer from "./pages/ItemListContainer";
+import Servicios from "./components/Servicios";
+import Contacto from "./components/Contacto";
+// import ItemsList from "./components/fromFirebase/ItemsList";
+// import Comprar from "./components/Comprar";
+import Formulario from "./components/Formulario";
+// import CartWidget from "./components/CartWidget";
+// import CartItem from "./components/CartItem";
 import ItemDetailContainer from "./pages/ItemDetailContainer";
-import Contact from "./pages/Contact";
-import { Servicios } from "./pages/Servicios";
-import Carrito from "./components/Carrito";
+import CartWidget from "./components/CartWidget";
+// import MakeOrder from './components/MakeOrder';
 
 const App = () => {
   return (
-    <div className="overflow-hidden">
-      <BrowserRouter>
+    <div className="">
+      <Router>
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/carrito" element={<Carrito />} />
-          <Route path="/catalogo" element={<ItemListContainer />} />
-          <Route
-            path="/catalogo/categoria/:categoryId"
-            element={<ItemListContainer />}
-          />
-          <Route path="/catalogo/item/:id" element={<ItemDetailContainer />} />
-          {/* <Route path="/producto/:id" element={<DetalleProducto/>}/> */}
+          <Route path="/item/:id" element={<ItemDetailContainer />} />
+          <Route path="/categoria/:categoryId" element={<Home />} />
+          <Route path="/" element={<ItemListContainer />} />
           <Route path="/servicios" element={<Servicios />} />
-          <Route path="/contacto" element={<Contact />} />
+          <Route path="/contacto" element={<Contacto />} />
+          {/* <Route path="/items" element={<ItemsList />} /> */}
+          <Route path="/carrito" element={<CartWidget />} />
+          <Route path="/formulario" element={<Formulario />} />
+          {/* <Route path='/comprar' element={<Comprar />} />   */}
         </Routes>
-        
-        <Footer />
-      </BrowserRouter>
+        {/* <Sidebar /> */}
+        <Footer/>        
+      </Router>
     </div>
   );
 };
